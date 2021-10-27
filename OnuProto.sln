@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnuProto", "OnuProto.csproj", "{AE027C71-F965-43D0-B177-FC4DFF862498}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE027C71-F965-43D0-B177-FC4DFF862498}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE027C71-F965-43D0-B177-FC4DFF862498}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE027C71-F965-43D0-B177-FC4DFF862498}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE027C71-F965-43D0-B177-FC4DFF862498}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AD4A554A-FE81-43D9-AA59-8BA0BACA49F9}
+	EndGlobalSection
+EndGlobal
