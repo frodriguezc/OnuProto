@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="OnuProto.index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="signup.aspx.cs" Inherits="OnuProto.View.signup" %>
 
 <!DOCTYPE html>
 
@@ -7,11 +7,8 @@
     <title></title>
 </head>
 <body>
-    <h1>ACADEMIA</h1>
-    
     <form id="form1" runat="server">
         <div>
-            
         </div>
     </form>
 </body>
