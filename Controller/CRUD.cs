@@ -8,10 +8,10 @@ namespace OnuProto.Controller
 {
     public class CRUD
     {
-        public static void CreateUser()
+        public static void CreateUser(string email, string name)
         {
-            string userEmail = "as@alala.cl";
-            string userName = "Sepa Moya";
+            string userEmail = email;
+            string userName = name;
             int userId = 2;
 
             Student student = new Student(userEmail, userName, userId);
