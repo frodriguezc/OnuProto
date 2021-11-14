@@ -8,17 +8,19 @@ namespace OnuProto.Controller
 {
     public class CRUD
     {
+        private static List<Student> stList = new List<Student>();
 
 
 
-        public static void CreateUser(string email, string name)
+        public static void newStudent(string em, string nam, string pwd)
         {
-            string userEmail = email;
-            string userName = name;
-            int userId = 2;
-
-            Student student = new Student(userEmail, userName, userId);
-                //public Student(string userEmail, string userName, int userId) : base(userEmail, userName, userId)
+            Random random = new Random();
+            int id = random.Next(1, 100); //luego se modifica esta seccion para asignar el user id de la bd
+            Student student = new Student(em, pwd, nam, id);
+            stList.Add(student);
         }
+
+
+
     }
 }
