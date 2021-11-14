@@ -24,38 +24,38 @@
                                     Dirección de correo electrónico:
                                 </label>
                                 <br />
-                                <asp:TextBox ID="email" runat="server" class="form-control" type="text" name="email" value="" placeholder="" size="30" MaxLength="50" required="required"></asp:TextBox>
+                                <asp:TextBox ID="txtEmail" runat="server" class="form-control" type="text" name="email" value="" placeholder="" size="30" MaxLength="50" required="required"></asp:TextBox>
                                 <%--<input class="form-control" type="text" name="email" value="" placeholder="" size="30" maxlength="50" required="required" />--%>
                             </div>
                             <div class="form-group">
                                 <label>
                                     Nombre de Usuario:
                                 </label>
-                                <asp:TextBox ID="name" runat="server" class="form-control" type="text" name="user" value="" placeholder="" size="30" MaxLength="50" required="required"></asp:TextBox>
+                                <asp:TextBox ID="txtName" runat="server" class="form-control" type="text" name="user" value="" placeholder="" size="30" MaxLength="50" required="required"></asp:TextBox>
                                 <%--<input class="form-control" type="text" name="user" value="" placeholder="" size="30" maxlength="30" required="required" />--%>
                             </div>
                             <div class="form-group">
                                 <label>
                                     Contraseña:
                                 </label>
-                                <asp:TextBox ID="pwd1" runat="server" class="form-control" type="password" name="password" value="" placeholder="" size="30" maxlength="30" required="required"></asp:TextBox>
+                                <asp:TextBox ID="txtPwd1" runat="server" class="form-control" type="password" name="password" value="" placeholder="" size="30" MaxLength="30" required="required"></asp:TextBox>
                                 <%--<input class="form-control" type="password" name="password" value="" placeholder="" size="30" maxlength="30" required="required" />--%>
                             </div>
                             <div class="form-group">
                                 <label>
                                     Confirmar Contraseña:
                                 </label>
-                                <asp:TextBox ID="pwd2" runat="server" class="form-control" type="password" name="repeat-password" value="" placeholder="" size="30" maxlength="30" required="required"></asp:TextBox>
+                                <asp:TextBox ID="txtPwd2" runat="server" class="form-control" type="password" name="repeat-password" value="" placeholder="" size="30" MaxLength="30" required="required"></asp:TextBox>
                                 <%--<input class="form-control" type="password" name="repeat-password" value="" placeholder="" size="30" maxlength="30" required="required" />
                             </div>--%>
                                 <br />
-                            <asp:Button ID="btnSignup" runat="server" Text="Registrarme" class="btn btn-primary btn-lg btn-block" OnClick="btnSignup_Click" />
-                            <%--                        <button type="submit" class="btn btn-primary btn-lg btn-block" name="btnsignup">Registro</button> --%>
+                                <asp:Button ID="btnSignup" runat="server" Text="Registrarme" class="btn btn-primary btn-lg btn-block" OnClick="btnSignup_Click" />
+                                <%--                        <button type="submit" class="btn btn-primary btn-lg btn-block" name="btnsignup">Registro</button> --%>
+                            </div>
+                        </form>
                     </div>
-    </form>
-    </div>
-        </div>
-    </div> 
+                </div>
+            </div>
 
         </div>
     </form>

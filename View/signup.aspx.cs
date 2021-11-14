@@ -15,7 +15,18 @@ namespace OnuProto.View {
         protected void btnSignup_Click(object sender, EventArgs e)
         {
             //TODO: crear signup
+            string em = txtEmail.Text.ToString();
+            string nam = txtName.Text.ToString();
+            string p1 = txtPwd1.Text.ToString();
+            string p2 = txtPwd2.Text.ToString();
 
+            if (p1 == p2)
+            {
+                CRUD.newStudent(em, nam, p1);
+            } else
+            {
+                //TODO: passwords no son iguales
+            }
             
         }
     }
