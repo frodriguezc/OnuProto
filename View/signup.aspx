@@ -4,8 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" />
 
     <title>Registro de nuevo usuario</title>
 </head>
@@ -23,27 +23,33 @@
                                 <label>
                                     Dirección de correo electrónico:
                                 </label>
-                                <input class="form-control" type="text" name="email" value="" placeholder="" size="30" maxlength="50" required>
+                                <br />
+                                <asp:TextBox ID="email" runat="server" class="form-control" type="text" name="email" value="" placeholder="" size="30" MaxLength="50" required="required"></asp:TextBox>
+                                <%--<input class="form-control" type="text" name="email" value="" placeholder="" size="30" maxlength="50" required="required" />--%>
                             </div>
                             <div class="form-group">
                                 <label>
                                     Nombre de Usuario:
                                 </label>
-                                <input class="form-control" type="text" name="user" value="" placeholder="" size="30" maxlength="30" required />
+                                <asp:TextBox ID="name" runat="server" class="form-control" type="text" name="user" value="" placeholder="" size="30" MaxLength="50" required="required"></asp:TextBox>
+                                <%--<input class="form-control" type="text" name="user" value="" placeholder="" size="30" maxlength="30" required="required" />--%>
                             </div>
                             <div class="form-group">
                                 <label>
                                     Contraseña:
                                 </label>
-                                <input class="form-control" type="password" name="password" value="" placeholder="" size="30" maxlength="30" required="" />
+                                <asp:TextBox ID="pwd1" runat="server" class="form-control" type="password" name="password" value="" placeholder="" size="30" maxlength="30" required="required"></asp:TextBox>
+                                <%--<input class="form-control" type="password" name="password" value="" placeholder="" size="30" maxlength="30" required="required" />--%>
                             </div>
                             <div class="form-group">
                                 <label>
                                     Confirmar Contraseña:
                                 </label>
-                                <input class="form-control" type="password" name="repeat-password" value="" placeholder="" size="30" maxlength="30" required="" />
-                            </div>
-                            <asp:Button ID="btnSignup" runat="server" Text="Button" class="btn btn-primary btn-lg btn-block" OnClick="btnSignup_Click" />
+                                <asp:TextBox ID="pwd2" runat="server" class="form-control" type="password" name="repeat-password" value="" placeholder="" size="30" maxlength="30" required="required"></asp:TextBox>
+                                <%--<input class="form-control" type="password" name="repeat-password" value="" placeholder="" size="30" maxlength="30" required="required" />
+                            </div>--%>
+                                <br />
+                            <asp:Button ID="btnSignup" runat="server" Text="Registrarme" class="btn btn-primary btn-lg btn-block" OnClick="btnSignup_Click" />
                             <%--                        <button type="submit" class="btn btn-primary btn-lg btn-block" name="btnsignup">Registro</button> --%>
                     </div>
     </form>

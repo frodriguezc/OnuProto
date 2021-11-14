@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using OnuProto.Controller;
 
 namespace OnuProto.View {
     public partial class signup : System.Web.UI.Page {
@@ -14,6 +15,8 @@ namespace OnuProto.View {
         protected void btnSignup_Click(object sender, EventArgs e)
         {
             //TODO: crear signup
+
+            
         }
     }
     }
