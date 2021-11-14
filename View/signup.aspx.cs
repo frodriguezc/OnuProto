@@ -10,5 +10,10 @@ namespace OnuProto.View {
         protected void Page_Load(object sender, EventArgs e) {
 
             }
+
+        protected void btnSignup_Click(object sender, EventArgs e)
+        {
+            //TODO: crear signup
         }
+    }
     }

@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 namespace OnuProto.View {
     public partial class login : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
-
+                //TODO: iniciar sesion
             }
         }
     }

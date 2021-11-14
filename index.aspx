@@ -7,8 +7,9 @@
     <title></title>
 </head>
 <body>
-    <h1>ACADEMIA</h1>
-    
+    <h1>ONU</h1>
+    <a href="View/login.aspx">Ingresar</a>
+    <a href="View/signup.aspx">Registrarse</a>
     <form id="form1" runat="server">
         <div>
             
