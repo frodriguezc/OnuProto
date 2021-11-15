@@ -20,13 +20,23 @@ namespace OnuProto.View {
             string p1 = txtPwd1.Text.ToString();
             string p2 = txtPwd2.Text.ToString();
 
-            if (p1 == p2)
+            try
             {
-                CRUD.newStudent(em, nam, p1);
-            } else
-            {
-                //TODO: passwords no son iguales
+                if (p1 == p2)
+                {
+                    CRUD.newStudent(em, nam, p1);
+                }
+                else
+                {
+                    //TODO: passwords no son iguales
+                }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error" + ex.ToString());
+                throw;
+            }
+            
             
         }
     }

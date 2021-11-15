@@ -24,13 +24,15 @@
                         <label>
                             Nombre de Usuario:
                         </label>
-                        <input class="form-control" type="text" name="user" value="" placeholder="" size="30" maxlength="30" required=""/>
+                        <asp:TextBox ID="TxtUsername" runat="server" class="form-control" type="text" name="user" value="" placeholder="" size="30" maxlength="30" required="required"></asp:TextBox>
+                        <%--<input class="form-control" type="text" name="user" value="" placeholder="" size="30" maxlength="30" required="required" />--%>
                     </div>
                     <div class="form-group">    
                         <label>
                             Contraseña
                         </label>
-                        <input class="form-control"  type="password" name="password" value="" placeholder="" size="30" maxlength="30" required=""/> 
+                        <asp:TextBox ID="TxtPwd" runat="server" class="form-control"  type="password" name="password" value="" placeholder="" size="30" maxlength="30" required="required"></asp:TextBox>
+                        <%--<input class="form-control"  type="password" name="password" value="" placeholder="" size="30" maxlength="30" required="required" />--%> 
                     </div>
                     <div class="checkbox">
                         <label>
@@ -38,7 +40,7 @@
                         </label>
                     </div>
                     <div class="form-group">  
-                        <asp:Button ID="btnSignup" runat="server" Text="Iniciar Sesión" class="btn btn-primary btn-lg btn-block"/>
+                        <asp:Button ID="btnSignup" runat="server" Text="Iniciar Sesión" class="btn btn-primary btn-lg btn-block" OnClick="btnSignup_Click"/>
                     <%--    <button type="submit" class="btn btn-primary btn-lg btn-block" name="btnsignup">
                             
                         </button>--%>
