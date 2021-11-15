@@ -25,9 +25,11 @@ namespace OnuProto.View {
                 {
                     //TODO Login correcto
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATENCION", "alert('SESION INICIADA')", true);
+                    Response.Redirect("webseries.aspx");
                     break;
                 }
             }
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATENCION", "alert('NO EXISTE EL USUARIO')", true);
         }
     }
     }

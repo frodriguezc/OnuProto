@@ -6,11 +6,14 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using OnuProto.Controller;
 
-namespace OnuProto.View {
-    public partial class signup : System.Web.UI.Page {
-        protected void Page_Load(object sender, EventArgs e) {
+namespace OnuProto.View
+{
+    public partial class signup : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
 
-            }
+        }
 
         protected void btnSignup_Click(object sender, EventArgs e)
         {
@@ -25,19 +28,22 @@ namespace OnuProto.View {
                 if (p1 == p2)
                 {
                     CRUD.newStudent(em, nam, p1);
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATENCION", "alert('USUARIO REGISTRADO CON EEEEXITO')", true);
                 }
                 else
                 {
                     //TODO: passwords no son iguales
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "REVISA TUS PASSWORD", "alert('LAS PASSWORDS SON DISTINTAS, TIENEN QUE SER IGUALES')", true);
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error" + ex.ToString());
                 throw;
+            } finally
+            {
+                Response.Redirect("~/index.aspx");
             }
-            
-            
         }
     }
-    }
+}
