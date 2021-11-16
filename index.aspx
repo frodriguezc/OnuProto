@@ -349,13 +349,7 @@
             <br>
     </section>
 
-    <h1>ONU</h1>
-    <a href="View/login.aspx">Ingresar</a>
-    <a href="View/signup.aspx">Registrarse</a>
-    <form id="form1" runat="server">
-        <div>
-        </div>
-    </form>
+   
         <footer class="" style="background-color: rgb(249, 250, 253);">
         <div class="section "> 
           <br>
