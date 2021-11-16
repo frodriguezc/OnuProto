@@ -42,7 +42,7 @@ namespace OnuProto.View
                 throw;
             } finally
             {
-                Response.Redirect("~/index.aspx");
+                //Response.Redirect("~/index.aspx");
             }
         }
     }

@@ -64,7 +64,7 @@
                 <div class="row">
                     <nav class="navbar navbar-expand-lg navbar-light w-100">
                         <a class="navbar-brand font-weight-bold" href="#">
-                            <img src="logo.png" width="300px">
+                            <img src="img/logo.png" width="300px">
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="#myNavbar" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -154,7 +154,7 @@
           <br>
           <div class="container">
             <div class="row">
-              <div class="col-xs-12 col-sm-6 col-md-3"> <img src="logo.png" width="100%"> <br>
+              <div class="col-xs-12 col-sm-6 col-md-3"> <img src="img/logo.png" width="100%"> <br>
                 <br>
                 <p>
                   Coryright © 2021                
@@ -188,7 +188,7 @@
               </div>
               <div class="col-xs-12 col-sm-6 col-md-3">
                   <h4>Forma de Pago:</h4>
-                  <img src="paypal.png" width="200px">
+                  <img src="img/paypal.png" width="200px">
               </div>
             </div>
           </div>

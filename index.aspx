@@ -65,7 +65,7 @@
                 <div class="row">
                     <nav class="navbar navbar-expand-lg navbar-light w-100">
                         <a class="navbar-brand font-weight-bold" href="#">
-                            <img src="logo.png" width="300px">
+                            <img src="img/logo.png" width="300px">
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="#myNavbar" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -116,7 +116,7 @@
                 </h3>
             </div>
             <div class="col-sm-12 col-lg-6">
-                <img class="order-lg-2" src="baner.png" alt="Summer Collection" width="90%">
+                <img class="order-lg-2" src="img/baner.png" alt="Summer Collection" width="90%">
             </div>
         </div>
     </div>
@@ -135,7 +135,7 @@
             <div class="row">
                 <div class="col-sm-6 col-lg-3">
                     <div class="card">
-                        <img class="card-img-top" src="img1.png" alt="Card image cap">
+                        <img class="card-img-top" src="img/img1.png" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Card Your Guide to Using the 
                         Right DevOps Tools</h5>
@@ -146,7 +146,7 @@
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <div class="card">
-                        <img class="card-img-top" src="img2.png" alt="Card image cap">
+                        <img class="card-img-top" src="img/img2.png" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Card Your Guide to Using the 
                         Right DevOps Tools</h5>
@@ -157,7 +157,7 @@
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <div class="card">
-                        <img class="card-img-top" src="img3.png" alt="Card image cap">
+                        <img class="card-img-top" src="img/img3.png" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Card Your Guide to Using the 
                         Right DevOps Tools</h5>
@@ -169,7 +169,7 @@
 
                 <div class="col-sm-6 col-lg-3">
                     <div class="card">
-                        <img class="card-img-top" src="img4.png" alt="Card image cap">
+                        <img class="card-img-top" src="img/img4.png" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Card Your Guide to Using the 
                         Right DevOps Tools</h5>
@@ -231,7 +231,7 @@
             <div class="row">
                 <div class="col-sm-6 col-lg-4">
                     <div class="media">
-                        <img class="mr-3" src="test1.png" alt="Generic placeholder image" width="60px">
+                        <img class="mr-3" src="img/test1.png" alt="Generic placeholder image" width="60px">
                         <div class="media-body">
                             <h5 class="mt-0">Lukaku 
                             </h5>
@@ -250,7 +250,7 @@
                 </div>
                 <div class="col-sm-6 col-lg-4">
                     <div class="media">
-                        <img class="mr-3" src="test2.png" alt="Generic placeholder image " width="60px">
+                        <img class="mr-3" src="img/test2.png" alt="Generic placeholder image " width="60px">
                         <div class="media-body">
                             <h5 class="mt-0">Paul Podga 
                             </h5>
@@ -269,7 +269,7 @@
                 </div>
                 <div class="col-sm-6 col-lg-4">
                     <div class="media">
-                        <img class="mr-3" src="test3.png" alt="Generic placeholder image" width="60px">
+                        <img class="mr-3" src="img/test3.png" alt="Generic placeholder image" width="60px">
                         <div class="media-body">
                             <h5 class="mt-0">Jhon Anthony 
                             </h5>
@@ -302,7 +302,7 @@
             <div class="row">
                 <div class="col-sm-6 col-lg-3">
                     <div class="card">
-                        <img class="card-img-top" src="img5.png" alt="Card image cap">
+                        <img class="card-img-top" src="img/img5.png" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Card Your Guide to Using the 
                         Right DevOps Tools</h5>
@@ -313,7 +313,7 @@
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <div class="card">
-                        <img class="card-img-top" src="img6.png" alt="Card image cap">
+                        <img class="card-img-top" src="img/img6.png" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Card Your Guide to Using the 
                         Right DevOps Tools</h5>
@@ -324,7 +324,7 @@
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <div class="card">
-                        <img class="card-img-top" src="img7.png" alt="Card image cap">
+                        <img class="card-img-top" src="img/img7.png" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Card Your Guide to Using the 
                         Right DevOps Tools</h5>
@@ -335,7 +335,7 @@
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <div class="card">
-                        <img class="card-img-top" src="img8.png" alt="Card image cap">
+                        <img class="card-img-top" src="img/img8.png" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Card Your Guide to Using the 
                         Right DevOps Tools</h5>
@@ -357,7 +357,7 @@
           <br>
           <div class="container">
             <div class="row">
-              <div class="col-xs-12 col-sm-6 col-md-3"> <img src="logo.png" width="100%"> <br>
+              <div class="col-xs-12 col-sm-6 col-md-3"> <img src="img/logo.png" width="100%"> <br>
                 <br>
                 <p>
                   Coryright © 2021                
@@ -391,7 +391,7 @@
               </div>
               <div class="col-xs-12 col-sm-6 col-md-3">
                   <h4>Forma de Pago:</h4>
-                  <img src="paypal.png" width="200px">
+                  <img src="img/paypal.png" width="200px">
               </div>
             </div>
           </div>
