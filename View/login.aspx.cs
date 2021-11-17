@@ -7,11 +7,14 @@ using System.Web.UI.WebControls;
 using OnuProto.Controller;
 using OnuProto.Model;
 
-namespace OnuProto.View {
-    public partial class login : System.Web.UI.Page {
-        protected void Page_Load(object sender, EventArgs e) {
-                
-            }
+namespace OnuProto.View
+{
+    public partial class login : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
 
         protected void btnSignup_Click(object sender, EventArgs e)
         {
@@ -26,10 +29,11 @@ namespace OnuProto.View {
                     //TODO Login correcto
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATENCION", "alert('SESION INICIADA')", true);
                     //Response.Redirect("webseries.aspx");
+
                     break;
                 }
             }
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATENCION", "alert('NO EXISTE EL USUARIO')", true);
         }
     }
-    }
+}
