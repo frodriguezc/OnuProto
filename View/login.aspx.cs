@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using OnuProto.Controller;
 using OnuProto.Model;
+using OnuProto.Controller;
 
 namespace OnuProto.View
 {
@@ -15,7 +15,6 @@ namespace OnuProto.View
         {
 
         }
-
         protected void btnSignup_Click(object sender, EventArgs e)
         {
             //TODO: iniciar sesion

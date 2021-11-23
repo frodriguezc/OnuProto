@@ -1,10 +1,12 @@
-﻿using System;
+﻿using OnuProto.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using OnuProto.Controller;
+
+
 
 namespace OnuProto.View
 {
@@ -14,7 +16,6 @@ namespace OnuProto.View
         {
 
         }
-
         protected void btnSignup_Click(object sender, EventArgs e)
         {
             //TODO: crear signup
@@ -40,7 +41,8 @@ namespace OnuProto.View
             {
                 Console.WriteLine("Error" + ex.ToString());
                 throw;
-            } finally
+            }
+            finally
             {
                 //Response.Redirect("~/index.aspx");
             }
