@@ -9,6 +9,14 @@ namespace OnuProto.Model
     {
         private string userEmail, userName, userPwd;
         private int userId;
+        private Role userRole;
+
+        public Role UserRole
+        {
+            get { return userRole; }
+            set { userRole = value; }
+        }
+
 
         public User(string userEmail, string userPwd, string userName, int userId)
         {

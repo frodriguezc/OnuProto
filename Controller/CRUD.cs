@@ -25,7 +25,12 @@ namespace OnuProto.Controller
             return stList;
         }
 
+        public static List<User> userList = new List<User>();
 
+        public static void addUser()
+        {
+            Role r1 = Role.findRole(1);
+        }
 
     }
 }

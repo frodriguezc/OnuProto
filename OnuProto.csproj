@@ -79,6 +79,7 @@
     <Compile Include="Model\Commentary.cs" />
     <Compile Include="Model\Lecture.cs" />
     <Compile Include="Model\Lesson.cs" />
+    <Compile Include="Model\Role.cs" />
     <Compile Include="Model\Section.cs" />
     <Compile Include="Model\Student.cs" />
     <Compile Include="Model\Teacher.cs" />
