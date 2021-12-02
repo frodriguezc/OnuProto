@@ -8,9 +8,9 @@ namespace OnuProto.Controller
 {
     public static class CRUD
     {
+        private static List<User> userList = new List<User>();
+
         private static List<Student> stList = new List<Student>();
-
-
 
         public static void newStudent(string em, string nam, string pwd)
         {
@@ -25,12 +25,14 @@ namespace OnuProto.Controller
             return stList;
         }
 
-        public static List<User> userList = new List<User>();
-
         public static void addUser()
         {
             Role r1 = Role.findRole(1);
         }
 
+        public static List<User> getUsers()
+        {
+            return userList;
+        }
     }
 }

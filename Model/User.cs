@@ -17,13 +17,13 @@ namespace OnuProto.Model
             set { userRole = value; }
         }
 
-
-        public User(string userEmail, string userPwd, string userName, int userId)
+        public User(string userEmail, string userName, string userPwd, int userId, Role userRole)
         {
             this.userEmail = userEmail;
-            this.userPwd = userPwd;
             this.userName = userName;
+            this.userPwd = userPwd;
             this.userId = userId;
+            this.userRole = userRole;
         }
 
         public string UserEmail { get => userEmail; set => userEmail = value; }

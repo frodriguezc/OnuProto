@@ -21,6 +21,8 @@ namespace OnuProto.View
             string user = TxtUsername.Text.ToString();
             string pwd = TxtPwd.Text.ToString();
 
+
+
             foreach (Student student in CRUD.getStudents())
             {
                 if (student.UserName == user && student.UserPwd == pwd)

@@ -89,7 +89,7 @@
                                 <h3>Obtenga ciento de cursos en línea</h3>
                                 <h1 style="font-size: 3.0em; color: #2c72d5;">Registrate<br>
                                     ahora</h1>
-                                <a class="btn btn-primary btn-lg" href="View/signup.aspx">Regístro</a>
+                                <a class="btn btn-primary btn-lg" href="signup.aspx">Regístro</a>
                             </div>
                         </div>
                     </div>

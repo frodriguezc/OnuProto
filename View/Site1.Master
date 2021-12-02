@@ -45,13 +45,13 @@
                     <div class="d-flex align-items-center">
                         <ul class="nav">
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="View/login.aspx">
+                                <a class="nav-link text-white" href="login.aspx">
                                     <span>Iniciar Sesión
                                     </span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="View/signup.aspx">
+                                <a class="nav-link text-white" href="signup.aspx">
                                     <span>Registro
                                     </span>
                                 </a>

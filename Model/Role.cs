@@ -29,7 +29,7 @@ namespace OnuProto.Model
             return roleList;
         }
 
-        public static void addRole()
+        public static void addRoles()
         {
             roleList.Add(new Role() { RoleCode = 1, RoleName = "Admin" });
             roleList.Add(new Role() { RoleCode = 2, RoleName = "Teacher" });
