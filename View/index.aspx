@@ -1,111 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="OnuProto.index" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
-    <title>ONU</title>
-</head>
-<body>
-
-    <section class="header">
-        <div class="header-top-line bg-primary">
-            <div class="container">
-                <!--inicio aqui-->
-                <div class="d-md-flex justify-content-between align-items-center">
-                    <!-- Top bar left -->
-                    <ul class="nav">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#">
-                                <i class="bi bi-facebook"></i></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#">
-                                <i class="bi bi-instagram"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#">
-                                <i class="bi bi-google"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#">
-                                <i class="bi bi-twitter"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- Top bar right -->
-                    <div class="d-flex align-items-center">
-                        <ul class="nav">
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="View/login.aspx">
-                                    <span>Iniciar Sesión
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="View/signup.aspx">
-                                    <span>Registro
-                                    </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="header-main">
-            <div class="container">
-                <div class="row">
-                    <nav class="navbar navbar-expand-lg navbar-light w-100">
-                        <a class="navbar-brand font-weight-bold" href="#">
-                            <img src="img/logo.png" width="300px">
-                        </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="#myNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <ul class="navbar-nav ml-auto">
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="none" href="#">Inicio
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="none" href="#">Cursos
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="none" href="#">Instructores
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="none" href="#">Blog
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="none" href="#">Contacto
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="navbar-spacer">
-                            </div>
-                            <span style="font-size: 1.0em; color: rgba(0,0,0,.5);">| $2000<a>
-                                <i class="bi bi-cart-check"></i>
-                                </i>
-                            </i></a></span>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </section>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Site1.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="OnuProto.View.index" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!--banner-->
     <div class="container-fluid" style="background-color: #f2feff;">
         <div class="row align-items-center">
@@ -193,7 +89,7 @@
                                 <h3>Obtenga ciento de cursos en línea</h3>
                                 <h1 style="font-size: 3.0em; color: #2c72d5;">Registrate<br>
                                     ahora</h1>
-                                <a class="btn btn-primary btn-lg" href="View/signup.aspx">Regístro</a>
+                                <a class="btn btn-primary btn-lg" href="signup.aspx">Regístro</a>
                             </div>
                         </div>
                     </div>
@@ -348,62 +244,4 @@
             <br>
             <br>
     </section>
-
-   
-        <footer class="" style="background-color: rgb(249, 250, 253);">
-        <div class="section "> 
-          <br>
-          <br>
-          <br>
-          <div class="container">
-            <div class="row">
-              <div class="col-xs-12 col-sm-6 col-md-3"> <img src="img/logo.png" width="100%"> <br>
-                <br>
-                <p>
-                  Coryright © 2021                
-                </p>
-                <p>
-                  <i class="bi bi-facebook"></i> &nbsp;
-                  <i class="bi bi-instagram"></i>&nbsp;
-                  <i class="bi bi-google"></i>&nbsp;
-                  <i class="bi bi-twitter"></i>
-                </p>    
-                
-              </div>  
-              <div class="col-xs-12 col-sm-6 col-md-3">
-                <h4>Más información</h4>
-                <p> Mesa Central:<br>
-                  +56932640678
-                </p>
-                <p>
-                  Email:<br>
-                  contacto@psicobien.cl
-                </p>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-3">
-                <h4>Servicio al cliente:</h4>
-                <p>
-                  Políticas de Privacidad<br>
-                  Términos y Condiciones<br>
-                  Contacto<br>
-                  Reclamos
-                </p>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-3">
-                  <h4>Forma de Pago:</h4>
-                  <img src="img/paypal.png" width="200px">
-              </div>
-            </div>
-          </div>
-          <br>
-          <br>
-          <br>  
-        </div>
-      </footer>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-</body>
-</html>
+</asp:Content>

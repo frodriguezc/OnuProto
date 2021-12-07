@@ -1,10 +1,13 @@
-﻿using System;
+﻿using OnuProto.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using OnuProto.Controller;
+
+
 
 namespace OnuProto.View
 {
@@ -14,10 +17,9 @@ namespace OnuProto.View
         {
 
         }
-
         protected void btnSignup_Click(object sender, EventArgs e)
         {
-            //TODO: crear signup
+            //signup
             string em = txtEmail.Text.ToString();
             string nam = txtName.Text.ToString();
             string p1 = txtPwd1.Text.ToString();
@@ -27,12 +29,12 @@ namespace OnuProto.View
             {
                 if (p1 == p2)
                 {
-                    CRUD.newStudent(em, nam, p1);
+                    CRUD.newUser(em, nam, p1, 3);
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATENCION", "alert('USUARIO REGISTRADO CON EEEEXITO')", true);
                 }
                 else
                 {
-                    //TODO: passwords no son iguales
+                    //passwords no son iguales
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "REVISA TUS PASSWORD", "alert('LAS PASSWORDS SON DISTINTAS, TIENEN QUE SER IGUALES')", true);
                 }
             }
@@ -40,9 +42,11 @@ namespace OnuProto.View
             {
                 Console.WriteLine("Error" + ex.ToString());
                 throw;
-            } finally
+            }
+            finally
             {
-                //Response.Redirect("~/index.aspx");
+                Thread.Sleep(2000);
+                Response.Redirect("index.aspx");
             }
         }
     }
