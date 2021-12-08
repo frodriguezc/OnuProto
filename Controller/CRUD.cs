@@ -14,7 +14,7 @@ namespace OnuProto.Controller
         {
             Random random = new Random();
             int id = random.Next(1, 9999); //luego se modifica esta seccion para asignar el user id de la bd
-            Role rol = Role.findRole(r);
+            int rol = Role.findRole(r);
             User user = new User(em, nam, pwd, id, rol);
         }
         public static List<User> getUsers()

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using OnuProto.Model;
 using OnuProto.Controller;
 using System.Threading;
@@ -34,13 +30,20 @@ namespace OnuProto.View
                         Thread.Sleep(2000);
                         Response.Redirect("admin.aspx");
                     }
-                    
-                    //Response.Redirect("webseries.aspx");
-
-                    break;
+                    //TODO: crear webseries page
+                    if (u.UserRole.RoleCode.Equals(3))
+                    {
+                        //Login correcto
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATENCION", "alert('SESION INICIADA')", true);
+                        Thread.Sleep(2000);
+                        Response.Redirect("webseries.aspx");
+                    }
+                } else
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATENCION", "alert('NO EXISTE EL USUARIO')", true);
                 }
             }
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATENCION", "alert('NO EXISTE EL USUARIO')", true);
+            
 
             //foreach (Student student in CRUD.getStudents())
             //{

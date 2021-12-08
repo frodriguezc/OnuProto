@@ -15,7 +15,7 @@
                             Dirección de correo electrónico:
                         </label>
                         <br />
-                        <asp:TextBox ID="txtEmail" runat="server" class="form-control" type="text" name="email" value="" placeholder="" size="30" MaxLength="50" required="required"></asp:TextBox>
+                        <asp:TextBox ID="txtEmail" runat="server" class="form-control" type="text" name="email" value="" placeholder="" size="30" MaxLength="50" required="required" TextMode="Email"></asp:TextBox>
                     </div>
                     <div class="form-group">
                         <label>
