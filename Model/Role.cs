@@ -36,17 +36,17 @@ namespace OnuProto.Model
             roleList.Add(new Role() { RoleCode = 3, RoleName = "Student" });
         }
 
-        public static int findRole(int cod)
-        {
-            foreach (Role item in roleList)
-            {
-                if (item.roleCode.Equals(cod))
-                {
-                    return (int)item.roleCode;
-                }
-            }
-            return 0;
-        }
+        //public static int findRole(int cod)
+        //{
+        //    foreach (Role item in roleList)
+        //    {
+        //        if (item.roleCode.Equals(cod))
+        //        {
+        //            return (int)item.roleCode;
+        //        }
+        //    }
+        //    return 0;
+        //}
 
         public static Role intToRole(int cod)
         {
