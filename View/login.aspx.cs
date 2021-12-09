@@ -29,12 +29,21 @@ namespace OnuProto.View
                 {
                     if (u.UserRole.RoleCode.Equals(1))
                     {
+                        Session.Add("name", u.UserName);
                         //Login correcto
                         ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATENCION", "alert('SESION INICIADA')", true);
                         Thread.Sleep(2000);
                         Response.Redirect("admin.aspx");
                     }
-                    
+                    if (u.UserRole.RoleCode.Equals(3))
+                    {
+                        Session.Add("name", u.UserName);
+                        //Login correcto
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATENCION", "alert('SESION INICIADA')", true);
+                        Thread.Sleep(2000);
+                        Response.Redirect("profile.aspx");
+                    }
+
                     //Response.Redirect("webseries.aspx");
 
                     break;

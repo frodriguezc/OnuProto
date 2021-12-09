@@ -13,7 +13,7 @@ namespace OnuProto.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Session["dummy"].Equals(true))
+            if (Session["dummy"] == null)
             {
                 Role.addRoles();
                 CRUD.makeUsers();

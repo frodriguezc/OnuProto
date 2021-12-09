@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "secrets1": {
+      "type": "secrets.user"
+    },
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/onuavanzadainacap/databases/onu",
+      "type": "mssql.azure",
+      "connectionId": "ConnString",
+      "secretStore": "LocalSecretsFile"
+    }
+  }
+}
