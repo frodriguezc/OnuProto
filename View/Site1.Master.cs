@@ -13,11 +13,18 @@ namespace OnuProto.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Session["dummy"].Equals(true))
+            System.Diagnostics.Debug.WriteLine(Session.ToString());
+            if (Session["old"] == null)
             {
                 Role.addRoles();
                 CRUD.makeUsers();
-                Session.Add("dummy", true);
+                Session["old"] = true;
+                System.Diagnostics.Debug.WriteLine("Usuarios creados:");
+                foreach (User user in CRUD.getUsers())
+                {
+                    System.Diagnostics.Debug.WriteLine(user.UserEmail);
+                }
+                System.Diagnostics.Debug.WriteLine("=====================================");
             }
         }
     }
