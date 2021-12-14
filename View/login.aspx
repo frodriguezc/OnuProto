@@ -15,7 +15,7 @@
                             Nombre de Usuario:
                         </label>
                         <asp:TextBox ID="TxtUsername" runat="server" class="form-control" type="text"
-                            name="user" value="" placeholder="" size="30" MaxLength="30"
+                            name="user" value="" placeholder="" size="30" MaxLength="30" TextMode="Email"
                             required="required"></asp:TextBox>
                     </div>
                     <div class="form-group">

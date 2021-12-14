@@ -17,7 +17,13 @@ namespace OnuProto.View
             {
                 Role.addRoles();
                 CRUD.makeUsers();
-                Session.Add("dummy", true);
+                Session["old"] = true;
+                System.Diagnostics.Debug.WriteLine("Usuarios creados:");
+                foreach (User user in CRUD.getUsers())
+                {
+                    System.Diagnostics.Debug.WriteLine(user.UserEmail);
+                }
+                System.Diagnostics.Debug.WriteLine("=====================================");
             }
         }
     }

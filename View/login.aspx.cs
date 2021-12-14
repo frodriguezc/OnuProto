@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using OnuProto.Model;
 using OnuProto.Controller;
 using System.Threading;
@@ -19,14 +15,19 @@ namespace OnuProto.View
         protected void btnSignup_Click(object sender, EventArgs e)
         {
             //TODO: iniciar sesion
-            string user = TxtUsername.Text.ToString();
-            string pwd = TxtPwd.Text.ToString();
+            string loginName = TxtUsername.Text.ToString();
+           
+                System.Diagnostics.Debug.WriteLine(loginName);
+            
+            string loginPwd = TxtPwd.Text.ToString();
 
 
             foreach (User u in CRUD.getUsers())
             {
-                if (u.UserName.Equals(user) && u.UserPwd.Equals(pwd))
+                if (u.UserEmail.Equals(loginName) && u.UserPwd.Equals(loginPwd))
                 {
+                    Session.Add("name", u.UserName);
+                    Session.Add("email", u.UserEmail);                    
                     if (u.UserRole.RoleCode.Equals(1))
                     {
                         Session.Add("name", u.UserName);
@@ -35,21 +36,13 @@ namespace OnuProto.View
                         Thread.Sleep(2000);
                         Response.Redirect("admin.aspx");
                     }
-                    if (u.UserRole.RoleCode.Equals(3))
-                    {
-                        Session.Add("name", u.UserName);
-                        //Login correcto
-                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATENCION", "alert('SESION INICIADA')", true);
-                        Thread.Sleep(2000);
-                        Response.Redirect("profile.aspx");
-                    }
-
+                    
                     //Response.Redirect("webseries.aspx");
 
                     break;
                 }
             }
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATENCION", "alert('NO EXISTE EL USUARIO')", true);
+            
 
             //foreach (Student student in CRUD.getStudents())
             //{

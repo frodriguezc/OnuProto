@@ -22,7 +22,7 @@
                     <ul class="nav">
                         <li class="nav-item">
                             <a class="nav-link text-white" href="#">
-                                <i class="bi bi-facebook"></i></i>
+                                <i class="bi bi-facebook"></i>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -44,6 +44,16 @@
                     <!-- Top bar right -->
                     <div class="d-flex align-items-center">
                         <ul class="nav">
+                            <%--<li class="nav-item">
+                                    <asp:UpdatePanel ID="UpdatePanel1" class="nav-link text-white" runat="server">
+                                
+                                </asp:UpdatePanel>
+                                    
+                                
+                            </li>--%>
+
+
+                            
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="login.aspx">
                                     <span>Iniciar Sesión
