@@ -1,0 +1,643 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="OnuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="EXPERTISE">
+          <Key>
+            <PropertyRef Name="EXP_ID" />
+          </Key>
+          <Property Name="EXP_ID" Type="int" Nullable="false" />
+          <Property Name="EXP_NAME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EXP_DESC" Type="varchar" MaxLength="240" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LESSON">
+          <Key>
+            <PropertyRef Name="L_ID" />
+          </Key>
+          <Property Name="L_NAME" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="L_DESC" Type="varchar" MaxLength="240" Nullable="false" />
+          <Property Name="L_CONTENT" Type="varchar" MaxLength="240" Nullable="false" />
+          <Property Name="L_SECT" Type="int" Nullable="false" />
+          <Property Name="L_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SECTION">
+          <Key>
+            <PropertyRef Name="S_ID" />
+          </Key>
+          <Property Name="S_ID" Type="int" Nullable="false" />
+          <Property Name="S_NAME" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="S_DESC" Type="varchar" MaxLength="240" Nullable="false" />
+          <Property Name="S_WS" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="STUDENT_PROG">
+          <Key>
+            <PropertyRef Name="PK" />
+          </Key>
+          <Property Name="LESSON" Type="int" Nullable="false" />
+          <Property Name="STUDENT" Type="int" Nullable="false" />
+          <Property Name="PK" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="STUDENT_WS">
+          <Key>
+            <PropertyRef Name="PK" />
+          </Key>
+          <Property Name="WEB_SERIE" Type="int" Nullable="false" />
+          <Property Name="STUDENT" Type="int" Nullable="false" />
+          <Property Name="PK" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="USER">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="int" Nullable="false" />
+          <Property Name="U_NAME" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="U_TYPE" Type="int" Nullable="false" />
+          <Property Name="U_EMAIL" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="U_EXPERTS" Type="int" />
+          <Property Name="U_PWD" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="USER_TYPE">
+          <Key>
+            <PropertyRef Name="TYPE_ID" />
+          </Key>
+          <Property Name="TYPE_ID" Type="int" Nullable="false" />
+          <Property Name="T_NAME" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WEBSERIE">
+          <Key>
+            <PropertyRef Name="WS_ID" />
+          </Key>
+          <Property Name="WS_ID" Type="int" Nullable="false" />
+          <Property Name="WS_NAME" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="WS_DESC" Type="varchar" MaxLength="240" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WS_TEACHER">
+          <Key>
+            <PropertyRef Name="PK" />
+          </Key>
+          <Property Name="WEB_SERIE" Type="int" Nullable="false" />
+          <Property Name="TEACHER" Type="int" Nullable="false" />
+          <Property Name="PK" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="LESSON_fk0">
+          <End Role="SECTION" Type="Self.SECTION" Multiplicity="1" />
+          <End Role="LESSON" Type="Self.LESSON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SECTION">
+              <PropertyRef Name="S_ID" />
+            </Principal>
+            <Dependent Role="LESSON">
+              <PropertyRef Name="L_SECT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SECTION_fk0">
+          <End Role="WEBSERIE" Type="Self.WEBSERIE" Multiplicity="1" />
+          <End Role="SECTION" Type="Self.SECTION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WEBSERIE">
+              <PropertyRef Name="WS_ID" />
+            </Principal>
+            <Dependent Role="SECTION">
+              <PropertyRef Name="S_WS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="STUDENT_PROG_fk0">
+          <End Role="LESSON" Type="Self.LESSON" Multiplicity="1" />
+          <End Role="STUDENT_PROG" Type="Self.STUDENT_PROG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LESSON">
+              <PropertyRef Name="L_ID" />
+            </Principal>
+            <Dependent Role="STUDENT_PROG">
+              <PropertyRef Name="LESSON" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="STUDENT_PROG_fk1">
+          <End Role="USER" Type="Self.USER" Multiplicity="1" />
+          <End Role="STUDENT_PROG" Type="Self.STUDENT_PROG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER">
+              <PropertyRef Name="USER_ID" />
+            </Principal>
+            <Dependent Role="STUDENT_PROG">
+              <PropertyRef Name="STUDENT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="STUDENT_WS_fk0">
+          <End Role="WEBSERIE" Type="Self.WEBSERIE" Multiplicity="1" />
+          <End Role="STUDENT_WS" Type="Self.STUDENT_WS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WEBSERIE">
+              <PropertyRef Name="WS_ID" />
+            </Principal>
+            <Dependent Role="STUDENT_WS">
+              <PropertyRef Name="WEB_SERIE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="STUDENT_WS_fk1">
+          <End Role="USER" Type="Self.USER" Multiplicity="1" />
+          <End Role="STUDENT_WS" Type="Self.STUDENT_WS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER">
+              <PropertyRef Name="USER_ID" />
+            </Principal>
+            <Dependent Role="STUDENT_WS">
+              <PropertyRef Name="STUDENT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="USER_fk0">
+          <End Role="USER_TYPE" Type="Self.USER_TYPE" Multiplicity="1" />
+          <End Role="USER" Type="Self.USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER_TYPE">
+              <PropertyRef Name="TYPE_ID" />
+            </Principal>
+            <Dependent Role="USER">
+              <PropertyRef Name="U_TYPE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="USER_fk1">
+          <End Role="EXPERTISE" Type="Self.EXPERTISE" Multiplicity="0..1" />
+          <End Role="USER" Type="Self.USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EXPERTISE">
+              <PropertyRef Name="EXP_ID" />
+            </Principal>
+            <Dependent Role="USER">
+              <PropertyRef Name="U_EXPERTS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="WS_TEACHER_fk0">
+          <End Role="WEBSERIE" Type="Self.WEBSERIE" Multiplicity="1" />
+          <End Role="WS_TEACHER" Type="Self.WS_TEACHER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WEBSERIE">
+              <PropertyRef Name="WS_ID" />
+            </Principal>
+            <Dependent Role="WS_TEACHER">
+              <PropertyRef Name="WEB_SERIE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="WS_TEACHER_fk1">
+          <End Role="USER" Type="Self.USER" Multiplicity="1" />
+          <End Role="WS_TEACHER" Type="Self.WS_TEACHER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER">
+              <PropertyRef Name="USER_ID" />
+            </Principal>
+            <Dependent Role="WS_TEACHER">
+              <PropertyRef Name="TEACHER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="OnuModelStoreContainer">
+          <EntitySet Name="EXPERTISE" EntityType="Self.EXPERTISE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LESSON" EntityType="Self.LESSON" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SECTION" EntityType="Self.SECTION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="STUDENT_PROG" EntityType="Self.STUDENT_PROG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="STUDENT_WS" EntityType="Self.STUDENT_WS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USER" EntityType="Self.USER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USER_TYPE" EntityType="Self.USER_TYPE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WEBSERIE" EntityType="Self.WEBSERIE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WS_TEACHER" EntityType="Self.WS_TEACHER" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="LESSON_fk0" Association="Self.LESSON_fk0">
+            <End Role="SECTION" EntitySet="SECTION" />
+            <End Role="LESSON" EntitySet="LESSON" />
+          </AssociationSet>
+          <AssociationSet Name="SECTION_fk0" Association="Self.SECTION_fk0">
+            <End Role="WEBSERIE" EntitySet="WEBSERIE" />
+            <End Role="SECTION" EntitySet="SECTION" />
+          </AssociationSet>
+          <AssociationSet Name="STUDENT_PROG_fk0" Association="Self.STUDENT_PROG_fk0">
+            <End Role="LESSON" EntitySet="LESSON" />
+            <End Role="STUDENT_PROG" EntitySet="STUDENT_PROG" />
+          </AssociationSet>
+          <AssociationSet Name="STUDENT_PROG_fk1" Association="Self.STUDENT_PROG_fk1">
+            <End Role="USER" EntitySet="USER" />
+            <End Role="STUDENT_PROG" EntitySet="STUDENT_PROG" />
+          </AssociationSet>
+          <AssociationSet Name="STUDENT_WS_fk0" Association="Self.STUDENT_WS_fk0">
+            <End Role="WEBSERIE" EntitySet="WEBSERIE" />
+            <End Role="STUDENT_WS" EntitySet="STUDENT_WS" />
+          </AssociationSet>
+          <AssociationSet Name="STUDENT_WS_fk1" Association="Self.STUDENT_WS_fk1">
+            <End Role="USER" EntitySet="USER" />
+            <End Role="STUDENT_WS" EntitySet="STUDENT_WS" />
+          </AssociationSet>
+          <AssociationSet Name="USER_fk0" Association="Self.USER_fk0">
+            <End Role="USER_TYPE" EntitySet="USER_TYPE" />
+            <End Role="USER" EntitySet="USER" />
+          </AssociationSet>
+          <AssociationSet Name="USER_fk1" Association="Self.USER_fk1">
+            <End Role="EXPERTISE" EntitySet="EXPERTISE" />
+            <End Role="USER" EntitySet="USER" />
+          </AssociationSet>
+          <AssociationSet Name="WS_TEACHER_fk0" Association="Self.WS_TEACHER_fk0">
+            <End Role="WEBSERIE" EntitySet="WEBSERIE" />
+            <End Role="WS_TEACHER" EntitySet="WS_TEACHER" />
+          </AssociationSet>
+          <AssociationSet Name="WS_TEACHER_fk1" Association="Self.WS_TEACHER_fk1">
+            <End Role="USER" EntitySet="USER" />
+            <End Role="WS_TEACHER" EntitySet="WS_TEACHER" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OnuModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="onuEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="EXPERTISEs" EntityType="OnuModel.EXPERTISE" />
+          <EntitySet Name="LESSONs" EntityType="OnuModel.LESSON" />
+          <EntitySet Name="SECTIONs" EntityType="OnuModel.SECTION" />
+          <EntitySet Name="STUDENT_PROG" EntityType="OnuModel.STUDENT_PROG" />
+          <EntitySet Name="STUDENT_WS" EntityType="OnuModel.STUDENT_WS" />
+          <EntitySet Name="USERs" EntityType="OnuModel.USER" />
+          <EntitySet Name="USER_TYPE" EntityType="OnuModel.USER_TYPE" />
+          <EntitySet Name="WEBSERIEs" EntityType="OnuModel.WEBSERIE" />
+          <EntitySet Name="WS_TEACHER" EntityType="OnuModel.WS_TEACHER" />
+          <AssociationSet Name="USER_fk1" Association="OnuModel.USER_fk1">
+            <End Role="EXPERTISE" EntitySet="EXPERTISEs" />
+            <End Role="USER" EntitySet="USERs" />
+          </AssociationSet>
+          <AssociationSet Name="LESSON_fk0" Association="OnuModel.LESSON_fk0">
+            <End Role="SECTION" EntitySet="SECTIONs" />
+            <End Role="LESSON" EntitySet="LESSONs" />
+          </AssociationSet>
+          <AssociationSet Name="STUDENT_PROG_fk0" Association="OnuModel.STUDENT_PROG_fk0">
+            <End Role="LESSON" EntitySet="LESSONs" />
+            <End Role="STUDENT_PROG" EntitySet="STUDENT_PROG" />
+          </AssociationSet>
+          <AssociationSet Name="SECTION_fk0" Association="OnuModel.SECTION_fk0">
+            <End Role="WEBSERIE" EntitySet="WEBSERIEs" />
+            <End Role="SECTION" EntitySet="SECTIONs" />
+          </AssociationSet>
+          <AssociationSet Name="STUDENT_PROG_fk1" Association="OnuModel.STUDENT_PROG_fk1">
+            <End Role="USER" EntitySet="USERs" />
+            <End Role="STUDENT_PROG" EntitySet="STUDENT_PROG" />
+          </AssociationSet>
+          <AssociationSet Name="STUDENT_WS_fk0" Association="OnuModel.STUDENT_WS_fk0">
+            <End Role="WEBSERIE" EntitySet="WEBSERIEs" />
+            <End Role="STUDENT_WS" EntitySet="STUDENT_WS" />
+          </AssociationSet>
+          <AssociationSet Name="STUDENT_WS_fk1" Association="OnuModel.STUDENT_WS_fk1">
+            <End Role="USER" EntitySet="USERs" />
+            <End Role="STUDENT_WS" EntitySet="STUDENT_WS" />
+          </AssociationSet>
+          <AssociationSet Name="USER_fk0" Association="OnuModel.USER_fk0">
+            <End Role="USER_TYPE" EntitySet="USER_TYPE" />
+            <End Role="USER" EntitySet="USERs" />
+          </AssociationSet>
+          <AssociationSet Name="WS_TEACHER_fk1" Association="OnuModel.WS_TEACHER_fk1">
+            <End Role="USER" EntitySet="USERs" />
+            <End Role="WS_TEACHER" EntitySet="WS_TEACHER" />
+          </AssociationSet>
+          <AssociationSet Name="WS_TEACHER_fk0" Association="OnuModel.WS_TEACHER_fk0">
+            <End Role="WEBSERIE" EntitySet="WEBSERIEs" />
+            <End Role="WS_TEACHER" EntitySet="WS_TEACHER" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="EXPERTISE">
+          <Key>
+            <PropertyRef Name="EXP_ID" />
+          </Key>
+          <Property Name="EXP_ID" Type="Int32" Nullable="false" />
+          <Property Name="EXP_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EXP_DESC" Type="String" Nullable="false" MaxLength="240" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="USERs" Relationship="OnuModel.USER_fk1" FromRole="EXPERTISE" ToRole="USER" />
+        </EntityType>
+        <EntityType Name="LESSON">
+          <Key>
+            <PropertyRef Name="L_ID" />
+          </Key>
+          <Property Name="L_NAME" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="L_DESC" Type="String" Nullable="false" MaxLength="240" FixedLength="false" Unicode="false" />
+          <Property Name="L_CONTENT" Type="String" Nullable="false" MaxLength="240" FixedLength="false" Unicode="false" />
+          <Property Name="L_SECT" Type="Int32" Nullable="false" />
+          <Property Name="L_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="SECTION" Relationship="OnuModel.LESSON_fk0" FromRole="LESSON" ToRole="SECTION" />
+          <NavigationProperty Name="STUDENT_PROG" Relationship="OnuModel.STUDENT_PROG_fk0" FromRole="LESSON" ToRole="STUDENT_PROG" />
+        </EntityType>
+        <EntityType Name="SECTION">
+          <Key>
+            <PropertyRef Name="S_ID" />
+          </Key>
+          <Property Name="S_ID" Type="Int32" Nullable="false" />
+          <Property Name="S_NAME" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="S_DESC" Type="String" Nullable="false" MaxLength="240" FixedLength="false" Unicode="false" />
+          <Property Name="S_WS" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="LESSONs" Relationship="OnuModel.LESSON_fk0" FromRole="SECTION" ToRole="LESSON" />
+          <NavigationProperty Name="WEBSERIE" Relationship="OnuModel.SECTION_fk0" FromRole="SECTION" ToRole="WEBSERIE" />
+        </EntityType>
+        <EntityType Name="STUDENT_PROG">
+          <Key>
+            <PropertyRef Name="PK" />
+          </Key>
+          <Property Name="LESSON" Type="Int32" Nullable="false" />
+          <Property Name="STUDENT" Type="Int32" Nullable="false" />
+          <Property Name="PK" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="LESSON1" Relationship="OnuModel.STUDENT_PROG_fk0" FromRole="STUDENT_PROG" ToRole="LESSON" />
+          <NavigationProperty Name="USER" Relationship="OnuModel.STUDENT_PROG_fk1" FromRole="STUDENT_PROG" ToRole="USER" />
+        </EntityType>
+        <EntityType Name="STUDENT_WS">
+          <Key>
+            <PropertyRef Name="PK" />
+          </Key>
+          <Property Name="WEB_SERIE" Type="Int32" Nullable="false" />
+          <Property Name="STUDENT" Type="Int32" Nullable="false" />
+          <Property Name="PK" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="WEBSERIE" Relationship="OnuModel.STUDENT_WS_fk0" FromRole="STUDENT_WS" ToRole="WEBSERIE" />
+          <NavigationProperty Name="USER" Relationship="OnuModel.STUDENT_WS_fk1" FromRole="STUDENT_WS" ToRole="USER" />
+        </EntityType>
+        <EntityType Name="USER">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="Int32" Nullable="false" />
+          <Property Name="U_NAME" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="U_TYPE" Type="Int32" Nullable="false" />
+          <Property Name="U_EMAIL" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="U_EXPERTS" Type="Int32" />
+          <Property Name="U_PWD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EXPERTISE" Relationship="OnuModel.USER_fk1" FromRole="USER" ToRole="EXPERTISE" />
+          <NavigationProperty Name="STUDENT_PROG" Relationship="OnuModel.STUDENT_PROG_fk1" FromRole="USER" ToRole="STUDENT_PROG" />
+          <NavigationProperty Name="STUDENT_WS" Relationship="OnuModel.STUDENT_WS_fk1" FromRole="USER" ToRole="STUDENT_WS" />
+          <NavigationProperty Name="USER_TYPE" Relationship="OnuModel.USER_fk0" FromRole="USER" ToRole="USER_TYPE" />
+          <NavigationProperty Name="WS_TEACHER" Relationship="OnuModel.WS_TEACHER_fk1" FromRole="USER" ToRole="WS_TEACHER" />
+        </EntityType>
+        <EntityType Name="USER_TYPE">
+          <Key>
+            <PropertyRef Name="TYPE_ID" />
+          </Key>
+          <Property Name="TYPE_ID" Type="Int32" Nullable="false" />
+          <Property Name="T_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="USERs" Relationship="OnuModel.USER_fk0" FromRole="USER_TYPE" ToRole="USER" />
+        </EntityType>
+        <EntityType Name="WEBSERIE">
+          <Key>
+            <PropertyRef Name="WS_ID" />
+          </Key>
+          <Property Name="WS_ID" Type="Int32" Nullable="false" />
+          <Property Name="WS_NAME" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="WS_DESC" Type="String" Nullable="false" MaxLength="240" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SECTIONs" Relationship="OnuModel.SECTION_fk0" FromRole="WEBSERIE" ToRole="SECTION" />
+          <NavigationProperty Name="STUDENT_WS" Relationship="OnuModel.STUDENT_WS_fk0" FromRole="WEBSERIE" ToRole="STUDENT_WS" />
+          <NavigationProperty Name="WS_TEACHER" Relationship="OnuModel.WS_TEACHER_fk0" FromRole="WEBSERIE" ToRole="WS_TEACHER" />
+        </EntityType>
+        <EntityType Name="WS_TEACHER">
+          <Key>
+            <PropertyRef Name="PK" />
+          </Key>
+          <Property Name="WEB_SERIE" Type="Int32" Nullable="false" />
+          <Property Name="TEACHER" Type="Int32" Nullable="false" />
+          <Property Name="PK" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="USER" Relationship="OnuModel.WS_TEACHER_fk1" FromRole="WS_TEACHER" ToRole="USER" />
+          <NavigationProperty Name="WEBSERIE" Relationship="OnuModel.WS_TEACHER_fk0" FromRole="WS_TEACHER" ToRole="WEBSERIE" />
+        </EntityType>
+        <Association Name="USER_fk1">
+          <End Type="OnuModel.EXPERTISE" Role="EXPERTISE" Multiplicity="0..1" />
+          <End Type="OnuModel.USER" Role="USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EXPERTISE">
+              <PropertyRef Name="EXP_ID" />
+            </Principal>
+            <Dependent Role="USER">
+              <PropertyRef Name="U_EXPERTS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LESSON_fk0">
+          <End Type="OnuModel.SECTION" Role="SECTION" Multiplicity="1" />
+          <End Type="OnuModel.LESSON" Role="LESSON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SECTION">
+              <PropertyRef Name="S_ID" />
+            </Principal>
+            <Dependent Role="LESSON">
+              <PropertyRef Name="L_SECT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="STUDENT_PROG_fk0">
+          <End Type="OnuModel.LESSON" Role="LESSON" Multiplicity="1" />
+          <End Type="OnuModel.STUDENT_PROG" Role="STUDENT_PROG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LESSON">
+              <PropertyRef Name="L_ID" />
+            </Principal>
+            <Dependent Role="STUDENT_PROG">
+              <PropertyRef Name="LESSON" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SECTION_fk0">
+          <End Type="OnuModel.WEBSERIE" Role="WEBSERIE" Multiplicity="1" />
+          <End Type="OnuModel.SECTION" Role="SECTION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WEBSERIE">
+              <PropertyRef Name="WS_ID" />
+            </Principal>
+            <Dependent Role="SECTION">
+              <PropertyRef Name="S_WS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="STUDENT_PROG_fk1">
+          <End Type="OnuModel.USER" Role="USER" Multiplicity="1" />
+          <End Type="OnuModel.STUDENT_PROG" Role="STUDENT_PROG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER">
+              <PropertyRef Name="USER_ID" />
+            </Principal>
+            <Dependent Role="STUDENT_PROG">
+              <PropertyRef Name="STUDENT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="STUDENT_WS_fk0">
+          <End Type="OnuModel.WEBSERIE" Role="WEBSERIE" Multiplicity="1" />
+          <End Type="OnuModel.STUDENT_WS" Role="STUDENT_WS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WEBSERIE">
+              <PropertyRef Name="WS_ID" />
+            </Principal>
+            <Dependent Role="STUDENT_WS">
+              <PropertyRef Name="WEB_SERIE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="STUDENT_WS_fk1">
+          <End Type="OnuModel.USER" Role="USER" Multiplicity="1" />
+          <End Type="OnuModel.STUDENT_WS" Role="STUDENT_WS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER">
+              <PropertyRef Name="USER_ID" />
+            </Principal>
+            <Dependent Role="STUDENT_WS">
+              <PropertyRef Name="STUDENT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="USER_fk0">
+          <End Type="OnuModel.USER_TYPE" Role="USER_TYPE" Multiplicity="1" />
+          <End Type="OnuModel.USER" Role="USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER_TYPE">
+              <PropertyRef Name="TYPE_ID" />
+            </Principal>
+            <Dependent Role="USER">
+              <PropertyRef Name="U_TYPE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="WS_TEACHER_fk1">
+          <End Type="OnuModel.USER" Role="USER" Multiplicity="1" />
+          <End Type="OnuModel.WS_TEACHER" Role="WS_TEACHER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER">
+              <PropertyRef Name="USER_ID" />
+            </Principal>
+            <Dependent Role="WS_TEACHER">
+              <PropertyRef Name="TEACHER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="WS_TEACHER_fk0">
+          <End Type="OnuModel.WEBSERIE" Role="WEBSERIE" Multiplicity="1" />
+          <End Type="OnuModel.WS_TEACHER" Role="WS_TEACHER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WEBSERIE">
+              <PropertyRef Name="WS_ID" />
+            </Principal>
+            <Dependent Role="WS_TEACHER">
+              <PropertyRef Name="WEB_SERIE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OnuModelStoreContainer" CdmEntityContainer="onuEntities">
+          <EntitySetMapping Name="EXPERTISEs">
+            <EntityTypeMapping TypeName="OnuModel.EXPERTISE">
+              <MappingFragment StoreEntitySet="EXPERTISE">
+                <ScalarProperty Name="EXP_DESC" ColumnName="EXP_DESC" />
+                <ScalarProperty Name="EXP_NAME" ColumnName="EXP_NAME" />
+                <ScalarProperty Name="EXP_ID" ColumnName="EXP_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LESSONs">
+            <EntityTypeMapping TypeName="OnuModel.LESSON">
+              <MappingFragment StoreEntitySet="LESSON">
+                <ScalarProperty Name="L_ID" ColumnName="L_ID" />
+                <ScalarProperty Name="L_SECT" ColumnName="L_SECT" />
+                <ScalarProperty Name="L_CONTENT" ColumnName="L_CONTENT" />
+                <ScalarProperty Name="L_DESC" ColumnName="L_DESC" />
+                <ScalarProperty Name="L_NAME" ColumnName="L_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SECTIONs">
+            <EntityTypeMapping TypeName="OnuModel.SECTION">
+              <MappingFragment StoreEntitySet="SECTION">
+                <ScalarProperty Name="S_WS" ColumnName="S_WS" />
+                <ScalarProperty Name="S_DESC" ColumnName="S_DESC" />
+                <ScalarProperty Name="S_NAME" ColumnName="S_NAME" />
+                <ScalarProperty Name="S_ID" ColumnName="S_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STUDENT_PROG">
+            <EntityTypeMapping TypeName="OnuModel.STUDENT_PROG">
+              <MappingFragment StoreEntitySet="STUDENT_PROG">
+                <ScalarProperty Name="PK" ColumnName="PK" />
+                <ScalarProperty Name="STUDENT" ColumnName="STUDENT" />
+                <ScalarProperty Name="LESSON" ColumnName="LESSON" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STUDENT_WS">
+            <EntityTypeMapping TypeName="OnuModel.STUDENT_WS">
+              <MappingFragment StoreEntitySet="STUDENT_WS">
+                <ScalarProperty Name="PK" ColumnName="PK" />
+                <ScalarProperty Name="STUDENT" ColumnName="STUDENT" />
+                <ScalarProperty Name="WEB_SERIE" ColumnName="WEB_SERIE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USERs">
+            <EntityTypeMapping TypeName="OnuModel.USER">
+              <MappingFragment StoreEntitySet="USER">
+                <ScalarProperty Name="U_PWD" ColumnName="U_PWD" />
+                <ScalarProperty Name="U_EXPERTS" ColumnName="U_EXPERTS" />
+                <ScalarProperty Name="U_EMAIL" ColumnName="U_EMAIL" />
+                <ScalarProperty Name="U_TYPE" ColumnName="U_TYPE" />
+                <ScalarProperty Name="U_NAME" ColumnName="U_NAME" />
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USER_TYPE">
+            <EntityTypeMapping TypeName="OnuModel.USER_TYPE">
+              <MappingFragment StoreEntitySet="USER_TYPE">
+                <ScalarProperty Name="T_NAME" ColumnName="T_NAME" />
+                <ScalarProperty Name="TYPE_ID" ColumnName="TYPE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WEBSERIEs">
+            <EntityTypeMapping TypeName="OnuModel.WEBSERIE">
+              <MappingFragment StoreEntitySet="WEBSERIE">
+                <ScalarProperty Name="WS_DESC" ColumnName="WS_DESC" />
+                <ScalarProperty Name="WS_NAME" ColumnName="WS_NAME" />
+                <ScalarProperty Name="WS_ID" ColumnName="WS_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WS_TEACHER">
+            <EntityTypeMapping TypeName="OnuModel.WS_TEACHER">
+              <MappingFragment StoreEntitySet="WS_TEACHER">
+                <ScalarProperty Name="PK" ColumnName="PK" />
+                <ScalarProperty Name="TEACHER" ColumnName="TEACHER" />
+                <ScalarProperty Name="WEB_SERIE" ColumnName="WEB_SERIE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

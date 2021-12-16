@@ -30,13 +30,15 @@ namespace OnuProto.View
                     Session.Add("email", u.UserEmail);                    
                     if (u.UserRole.RoleCode.Equals(1))
                     {
-                        Session.Add("name", u.UserName);
-                        //Login correcto
-                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATENCION", "alert('SESION INICIADA')", true);
-                        Thread.Sleep(2000);
+                        Session.Add("role", "Admin");
                         Response.Redirect("admin.aspx");
                     }
-                    
+                    if (u.UserRole.RoleCode.Equals(3))
+                    {
+                        Session.Add("role", "Student");
+                        Response.Redirect("profile.aspx");
+                    }
+
                     //Response.Redirect("webseries.aspx");
 
                     break;

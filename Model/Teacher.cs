@@ -10,14 +10,10 @@ namespace OnuProto.Model {
 
         private string expertise;
 
-        public Teacher(string userEmail, string userName, string userPwd, int userId, Role userRole) : base(userEmail, userName, userPwd, userId, userRole)
-        {
-        }
 
         public string Expertise { get => expertise; set => expertise = value; }
 
-
-        public Teacher(string userEmail, string userPwd, string userName, int userId) : base(userEmail, userPwd, userName, userId)
+        public Teacher(string userEmail, string userName, string userPwd, int userId, int userRole) : base(userEmail, userName, userPwd, userId, userRole)
         {
         }
 
