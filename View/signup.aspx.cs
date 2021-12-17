@@ -31,6 +31,7 @@ namespace OnuProto.View
                 {
                     CRUD.newUser(em, nam, p1, 3);
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATENCION", "alert('USUARIO REGISTRADO CON EEEEXITO')", true);
+                    Response.Redirect("login.aspx");
                 }
                 else
                 {

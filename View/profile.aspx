@@ -16,6 +16,9 @@
                 </asp:Label>
                 <br />
             </div>
+            <div>
+                <asp:Button ID="btnSaveChgs" runat="server" Text="Guardar Cambios" />
+            </div>
         </div>
     </div>
 </asp:Content>

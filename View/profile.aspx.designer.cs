@@ -7,12 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OnuProto.View
-{
+namespace OnuProto.View {
 
 
-    public partial class profile
-    {
+    public partial class profile {
 
         /// <summary>
         /// lbName control.
@@ -31,5 +29,14 @@ namespace OnuProto.View
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox lbRole;
+
+        /// <summary>
+        /// btnSaveChgs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSaveChgs;
     }
 }
