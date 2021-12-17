@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Web.UI;
-using OnuProto.Model;
+//using OnuProto.Model;
 using OnuProto.Controller;
 using System.Threading;
 
@@ -16,48 +16,44 @@ namespace OnuProto.View
         {
             //TODO: iniciar sesion
             string loginName = TxtUsername.Text.ToString();
-           
-                System.Diagnostics.Debug.WriteLine(loginName);
-            
+
+            System.Diagnostics.Debug.WriteLine(loginName);
+
             string loginPwd = TxtPwd.Text.ToString();
 
-
-            foreach (User u in CRUD.getUsers())
+            if (CRUD.validateUser(loginName, loginPwd))
             {
-                if (u.UserEmail.Equals(loginName) && u.UserPwd.Equals(loginPwd))
-                {
-                    Session.Add("name", u.UserName);
-                    Session.Add("email", u.UserEmail);                    
-                    if (u.UserRole.RoleCode.Equals(1))
-                    {
-                        Session.Add("role", "Admin");
-                        Response.Redirect("admin.aspx");
-                    }
-                    if (u.UserRole.RoleCode.Equals(3))
-                    {
-                        Session.Add("role", "Student");
-                        Response.Redirect("profile.aspx");
-                    }
-
-                    //Response.Redirect("webseries.aspx");
-
-                    break;
-                }
+                Session["name"] = CRUD.getUserName(loginName);
+                Session["type"] = CRUD.getUserType(loginName);
+                //switch (CRUD.getUserType(loginName))
+                //{
+                //    case "1":
+                //        Session["type"] = "Admin";
+                //        break;
+                //    case "2":
+                //        Session["type"] = "Teacher";
+                //        break;
+                //    case "3":
+                //        Session["type"] = "Student";
+                //        break;
+                //    case "Admin":
+                //        Session["type"] = "Admin";
+                //        break;
+                //    case "Teacher":
+                //        Session["type"] = "Teacher";
+                //        break;
+                //    case "Student":
+                //        Session["type"] = "Student";
+                //        break;
+                //    default:
+                //        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATENCION", "alert('NO EXISTE EL USUARIO')", true);
+                //        break;
+                //}
             }
-            
-
-            //foreach (Student student in CRUD.getStudents())
-            //{
-            //    if (student.UserName == user && student.UserPwd == pwd)
-            //    {
-            //        //TODO Login correcto
-            //        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATENCION", "alert('SESION INICIADA')", true);
-            //        //Response.Redirect("webseries.aspx");
-
-            //        break;
-            //    }
-            //}
-            //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATENCION", "alert('NO EXISTE EL USUARIO')", true);
+            else
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATENCION", "alert('NO EXISTE EL USUARIO')", true);
+            }
         }
     }
 }

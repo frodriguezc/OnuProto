@@ -12,7 +12,7 @@ namespace OnuProto.View
         protected void Page_Load(object sender, EventArgs e)
         {
             lbName.Text = Session["name"].ToString();
-            lbRole.Text = Session["role"].ToString();
+            lbRole.Text = Session["type"].ToString();
         }
     }
 }
