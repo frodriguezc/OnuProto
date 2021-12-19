@@ -21,19 +21,19 @@
                         <label>
                             Nombre de Usuario:
                         </label>
-                        <asp:TextBox ID="txtName" runat="server" class="form-control" type="text" name="user" value="" placeholder="" size="30" MaxLength="50" required="required"></asp:TextBox>
+                        <asp:TextBox ID="txtName" runat="server" class="form-control" type="text" name="user" value="" placeholder="" size="30" MaxLength="50" minlength="4" required="required"></asp:TextBox>
                     </div>
                     <div class="form-group">
                         <label>
                             Contraseña:
                         </label>
-                        <asp:TextBox ID="txtPwd1" runat="server" class="form-control" type="password" name="password" value="" placeholder="" size="30" MaxLength="30" required="required"></asp:TextBox>
+                        <asp:TextBox ID="txtPwd1" runat="server" class="form-control" type="password" name="password" value="" placeholder="" size="30" MaxLength="30" minlength="8" pattern="^[a-zA-Z0-9_.-]*$" required="required"></asp:TextBox>
                     </div>
                     <div class="form-group">
                         <label>
                             Confirmar Contraseña:
                         </label>
-                        <asp:TextBox ID="txtPwd2" runat="server" class="form-control" type="password" name="repeat-password" value="" placeholder="" size="30" MaxLength="30" required="required"></asp:TextBox>
+                        <asp:TextBox ID="txtPwd2" runat="server" class="form-control" type="password" name="repeat-password" value="" placeholder="" size="30" MaxLength="30" minlength="8" pattern="^[a-zA-Z0-9_.-]*$" required="required"></asp:TextBox>
                         <br />
                         <asp:Button ID="btnSignup" runat="server" Text="Registrarme" class="btn btn-primary btn-lg btn-block" OnClick="btnSignup_Click" />
                     </div>

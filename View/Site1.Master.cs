@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using OnuProto.Controller;
-using OnuProto.Model;
 
 namespace OnuProto.View
 {
