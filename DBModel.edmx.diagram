@@ -4,15 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2515da9cdc7b42598624219e1bc7240b" Name="Diagram1" ShowGrid="true" ZoomLevel="85">
-        <EntityTypeShape EntityType="OnuModel.EXPERTISE" Width="1.5" PointX="0.75" PointY="5" />
-        <EntityTypeShape EntityType="OnuModel.LESSON" Width="1.5" PointX="3" PointY="8.625" />
-        <EntityTypeShape EntityType="OnuModel.SECTION" Width="1.5" PointX="0.75" PointY="8.75" />
-        <EntityTypeShape EntityType="OnuModel.STUDENT_PROG" Width="1.5" PointX="5.25" PointY="7.875" />
-        <EntityTypeShape EntityType="OnuModel.STUDENT_WS" Width="1.5" PointX="5.25" PointY="4.875" />
-        <EntityTypeShape EntityType="OnuModel.USER" Width="1.5" PointX="3" PointY="4.25" />
+      <Diagram DiagramId="2515da9cdc7b42598624219e1bc7240b" Name="Diagram1" ShowGrid="true" ZoomLevel="106">
+        <EntityTypeShape EntityType="OnuModel.EXPERTISE" Width="1.5" PointX="0.75" PointY="4" />
+        <EntityTypeShape EntityType="OnuModel.LESSON" Width="1.5" PointX="4.75" PointY="6.75" />
+        <EntityTypeShape EntityType="OnuModel.SECTION" Width="1.5" PointX="7.625" PointY="5.875" />
+        <EntityTypeShape EntityType="OnuModel.STUDENT_PROG" Width="1.5" PointX="2.5" PointY="6.375" />
+        <EntityTypeShape EntityType="OnuModel.STUDENT_WS" Width="1.5" PointX="5.375" PointY="4.375" />
+        <EntityTypeShape EntityType="OnuModel.USER" Width="1.5" PointX="3" PointY="2" />
         <EntityTypeShape EntityType="OnuModel.USER_TYPE" Width="1.5" PointX="0.75" PointY="2" />
-        <EntityTypeShape EntityType="OnuModel.WEBSERIE" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="OnuModel.WEBSERIE" Width="1.5" PointX="7.625" PointY="2" />
         <EntityTypeShape EntityType="OnuModel.WS_TEACHER" Width="1.5" PointX="5.25" PointY="1.875" />
         <AssociationConnector Association="OnuModel.USER_fk1" />
         <AssociationConnector Association="OnuModel.LESSON_fk0" />

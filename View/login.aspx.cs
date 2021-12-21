@@ -25,30 +25,35 @@ namespace OnuProto.View
             {
                 Session["name"] = CRUD.getUserName(loginName);
                 Session["type"] = CRUD.getUserType(loginName);
-                //switch (CRUD.getUserType(loginName))
-                //{
-                //    case "1":
-                //        Session["type"] = "Admin";
-                //        break;
-                //    case "2":
-                //        Session["type"] = "Teacher";
-                //        break;
-                //    case "3":
-                //        Session["type"] = "Student";
-                //        break;
-                //    case "Admin":
-                //        Session["type"] = "Admin";
-                //        break;
-                //    case "Teacher":
-                //        Session["type"] = "Teacher";
-                //        break;
-                //    case "Student":
-                //        Session["type"] = "Student";
-                //        break;
-                //    default:
-                //        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATENCION", "alert('NO EXISTE EL USUARIO')", true);
-                //        break;
-                //}
+                
+                switch (CRUD.getUserType(loginName))
+                {
+                    case "1":
+                        Session["type"] = "Admin";
+                        Response.Redirect("admin.aspx");
+                        break;
+                    case "2":
+                        Session["type"] = "Teacher";
+                        break;
+                    case "3":
+                        Session["type"] = "Student";
+                        Response.Redirect("profile.aspx");
+                        break;
+                    case "Admin":
+                        Response.Redirect("admin.aspx");
+                        Session["type"] = "Admin";
+                        break;
+                    case "Teacher":
+                        Session["type"] = "Teacher";
+                        break;
+                    case "Student":
+                        Session["type"] = "Student";
+                        Response.Redirect("profile.aspx");
+                        break;
+                    default:
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ATENCION", "alert('NO EXISTE EL USUARIO')", true);
+                        break;
+                }
             }
             else
             {

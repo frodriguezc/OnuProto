@@ -4,5 +4,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>EL PULENTO DE ADMIN HA INGRESADO</h1>
     <h2>Cuidado con no dejar la escoba...</h2>
-    <asp:ListBox ID="lbxUsuarios" runat="server"></asp:ListBox>
+    <asp:GridView ID="gdUsers" AutoGenerateColumns="true" runat="server">
+    </asp:GridView>
 </asp:Content>
