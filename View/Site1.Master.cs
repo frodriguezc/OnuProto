@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using OnuProto.Controller;
@@ -12,18 +13,28 @@ namespace OnuProto.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["dummy"] == null)
-            //{
-            //    Role.addRoles();
-            //    CRUD.makeUsers();
-            //    Session["old"] = true;
-            //    System.Diagnostics.Debug.WriteLine("Usuarios creados:");
-            //    foreach (User user in CRUD.getUsers())
-            //    {
-            //        System.Diagnostics.Debug.WriteLine(user.UserEmail);
-            //    }
-            //    System.Diagnostics.Debug.WriteLine("=====================================");
-            //}
+            if (Session["name"] != null) {
+                usrSess.Text = "Cerrar Session de " + Session["name"].ToString();
+            }
+
+        }
+        //public ActionResult quitSession() {
+        //    salir();
+        //    return View();
+        //}
+
+        public void salir() {
+            try {
+                Session.Abandon();
+                Response.Redirect("index.aspx");
+            } catch (Exception e) {
+
+                throw;
+            }
+        }
+
+        protected void lnkSalir_Click(object sender, EventArgs e) {
+            salir();
         }
     }
 }

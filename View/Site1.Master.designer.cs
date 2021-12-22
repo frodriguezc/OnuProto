@@ -7,12 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OnuProto.View
-{
+namespace OnuProto.View {
 
 
-    public partial class Site1
-    {
+    public partial class Site1 {
 
         /// <summary>
         /// head control.
@@ -22,6 +20,15 @@ namespace OnuProto.View
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+
+        /// <summary>
+        /// usrSess control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label usrSess;
 
         /// <summary>
         /// form1 control.

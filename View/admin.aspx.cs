@@ -15,9 +15,18 @@ namespace OnuProto.View
         {
             if (!this.IsPostBack) {
                 List<USER> usuarios = CRUD.listUsers();
-                
                 gdUsers.DataSource = usuarios;
                 gdUsers.DataBind();
+            }
+        }
+
+        protected void gdUsers_RowCommand(Object sender, GridViewCommandEventArgs e) {
+            int index = Convert.ToInt32(e.CommandArgument);
+            if (e.CommandName == "deleteUserFromAdmin") {
+                Response.Redirect("index.aspx");
+            }
+            if (e.CommandName == "editUserFromAdmin") {
+                Response.Redirect("signup.aspx");
             }
         }
     }
