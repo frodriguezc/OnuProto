@@ -116,7 +116,10 @@
       <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
     <Content Include="View\admin.aspx" />
+    <Content Include="View\contacto.aspx" />
+    <Content Include="View\cursos.aspx" />
     <Content Include="View\index.aspx" />
+    <Content Include="View\instructores.aspx" />
     <Content Include="View\login.aspx" />
     <Content Include="View\profile.aspx" />
     <Content Include="View\signup.aspx" />
@@ -170,12 +173,33 @@
     <Compile Include="View\admin.aspx.designer.cs">
       <DependentUpon>admin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\contacto.aspx.cs">
+      <DependentUpon>contacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\contacto.aspx.designer.cs">
+      <DependentUpon>contacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\cursos.aspx.cs">
+      <DependentUpon>cursos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\cursos.aspx.designer.cs">
+      <DependentUpon>cursos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\instructores.aspx.cs">
+      <DependentUpon>instructores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\instructores.aspx.designer.cs">
+      <DependentUpon>instructores.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>

@@ -15,13 +15,11 @@ namespace OnuProto.View
         {
             if (Session["name"] != null) {
                 usrSess.Text = "Cerrar Session de " + Session["name"].ToString();
+                lbInc.Text = "";
+                lbRegistro.Text = "";
             }
 
         }
-        //public ActionResult quitSession() {
-        //    salir();
-        //    return View();
-        //}
 
         public void salir() {
             try {

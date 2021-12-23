@@ -54,13 +54,13 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="login.aspx">
-                                    <span>Iniciar Sesión
+                                    <span><asp:Label ID="lbInc" runat="server" Text="Iniciar Sesión"></asp:Label>
                                     </span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="signup.aspx">
-                                    <span>Registro
+                                    <span><asp:Label ID="lbRegistro" runat="server" Text="Registro"></asp:Label>
                                     </span>
                                 </a>
                             </li>
@@ -86,19 +86,19 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="none" href="#">Cursos
+                                    <a class="nav-link" data-toggle="none" href="cursos.aspx">Cursos
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="none" href="#">Instructores
+                                    <a class="nav-link" data-toggle="none" href="instructores.aspx">Instructores
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                               <%-- <li class="nav-item">
                                     <a class="nav-link" data-toggle="none" href="#">Blog
                                     </a>
-                                </li>
+                                </li>--%>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="none" href="#">Contacto
+                                    <a class="nav-link" data-toggle="none" href="contacto.aspx">Contacto
                                     </a>
                                 </li>
                             </ul>

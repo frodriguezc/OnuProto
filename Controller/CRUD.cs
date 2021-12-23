@@ -57,6 +57,7 @@ namespace OnuProto.Controller {
         public static bool deleteUser(int uid) {
             try {
                 dbc.USERs.Remove(dbc.USERs.Find(uid));
+                dbc.SaveChanges();
                 return true;
             } catch (Exception e) {
                 return false;

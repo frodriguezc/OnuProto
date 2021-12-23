@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>EL PULENTO DE ADMIN HA INGRESADO</h1>
     <h2>Cuidado con no dejar la escoba...</h2>
-    <asp:GridView ID="gdUsers" AutoGenerateColumns="false" runat="server" OnRowCommand="gdUsers_RowCommand">
+    <asp:GridView ID="gdUsers" AutoGenerateColumns="false" runat="server" OnRowCommand="gdUsers_RowCommand" OnSelectedIndexChanging="gdUsers_SelectedIndexChanging">
         <Columns>
             <asp:BoundField DataField="USER_ID" HeaderText="ID de usuario" HeaderStyle-HorizontalAlign="Center" />
             <asp:BoundField DataField="U_NAME" HeaderText="Nombre completo" HeaderStyle-HorizontalAlign="Center" />
